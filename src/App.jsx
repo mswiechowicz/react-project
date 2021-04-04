@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import './App.scss';
 import StoreProvider from "./store/StoreProvider";
+import Header from "./components/Header/Header";
 
 class App extends Component
 {
@@ -9,7 +10,7 @@ class App extends Component
         return (
             <StoreProvider>
                 <div className="App">
-                    Hello world!
+                    <Header />
                 </div>
             </StoreProvider>
         );
