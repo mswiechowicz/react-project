@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Modal from "../Modal/Modal";
 import bemCssModules from "bem-css-modules";
 
@@ -19,17 +19,14 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
     const handleOnChangePassword = ({target: {value}}) => setPassword(value);
     const handleOnCloseModal = e => {e.preventDefault(); handleOnClose()};
 
-    const validateMessageComponent = validateMessage.length
-        ? <p className={block('validate-message')}>{validateMessage}</p>
-        : null
+    const resetInputState = () => {
 
-    const resetState = () => {
-            setLogin('');
-            setPassword('');
-            setValidateMessage('');
+        setLogin('');
+        setPassword('');
+        setValidateMessage('');
     };
-
     const handleOnSubmit = async e => {
+
         e.preventDefault();
         const {data, status} = await request.post(
             '/users',
@@ -37,12 +34,21 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
             )
         if (status === 200) {
             setUser(data.user);
-            resetState();
+            resetInputState();
             handleOnClose();
         } else {
             setValidateMessage(data.message);
         }
-    };
+    }
+
+    useEffect(()=>{
+        if(isModalOpen)
+            resetInputState()
+    }, [isModalOpen])
+
+    const validateMessageComponent = validateMessage.length
+        ? <p className={block('validate-message')}>{validateMessage}</p>
+        : null
 
     return (
         <Modal
