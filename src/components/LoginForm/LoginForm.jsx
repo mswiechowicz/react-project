@@ -57,7 +57,6 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
             shouldBeCloseOnOutsideClick={true}
             style={block()}
         >
-            {validateMessageComponent}
             <form className={block()} method="post" onSubmit={handleOnSubmit}>
                 <h2 className={block('title')}>Logowanie</h2>
                 <div className={block('row')}>
@@ -72,6 +71,7 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
                         <input type="password" value={password} onChange={handleOnChangePassword}/>
                     </label>
                 </div>
+                {validateMessageComponent}
                 <div className={block('row')}>
                     <button onClick={handleOnSubmit}type="submit">Zaloguj</button>
                     <button onClick={handleOnCloseModal}>Anuluj</button>

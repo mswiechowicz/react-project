@@ -1,8 +1,7 @@
-.login-form {
+.course-popup {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  color: white;
 
   &__title {
     display: flex;
@@ -12,12 +11,12 @@
     color: white;
   }
 
-  &__validate-message {
-    color : crimson;
-    text-align: center;
+  &__form {
+    display: flex;
+    flex-direction: column;
   }
 
-  &__row {
+  &__form-row {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -25,39 +24,62 @@
     justify-content: space-around;
     color: white;
 
-    button {
-      background-color: #61dafb;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      width: 50%;
-      margin: 10px auto;
-      text-transform: uppercase;
-      padding: 10px;
-      cursor: pointer;
-      &:nth-child(2) {
-        background-color: crimson;
-      }
-    }
     &-label {
       span {
         font-size: 20px;
       }
+
       width: 100%;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+
       input {
         padding: 5px;
         border-radius: 10px;
         border: none;
         background-color: #282c34;
         color: #61dafb;
+
         &:focus {
           outline: none;
         }
       }
     }
   }
+
+  &__cancel {
+    background-color: crimson !important;
+  }
+
+  button {
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 50%;
+    padding: 6px;
+    margin: 10px auto;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    button {
+      background-color: crimson;
+      width: 25%;
+      padding: 6px;
+      margin: 0;
+    }
+  }
+
+  //&__input {
+  //  display: flex;
+  //  flex-grow: 1;
+  //}
 }

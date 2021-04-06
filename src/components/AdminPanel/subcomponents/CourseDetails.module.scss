@@ -1,0 +1,19 @@
+.course-details {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  &__button {
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 15%;
+    margin: 10px auto;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+  }
+  &__button-cancel {
+    background-color: crimson;
+  }
+}

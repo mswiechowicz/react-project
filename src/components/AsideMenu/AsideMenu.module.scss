@@ -4,6 +4,12 @@
   background-color: #181b21;
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  &__nav-wrapper {
+    position: sticky;
+    top: 80px;
+  }
 
   &__title {
     padding: 15px;
