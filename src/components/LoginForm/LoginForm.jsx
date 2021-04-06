@@ -58,16 +58,17 @@ const LoginForm = ({handleOnClose, isModalOpen}) => {
             style={block()}
         >
             {validateMessageComponent}
-            <form method="post" onSubmit={handleOnSubmit}>
+            <form className={block()} method="post" onSubmit={handleOnSubmit}>
+                <h2 className={block('title')}>Logowanie</h2>
                 <div className={block('row')}>
-                    <label>
-                        Login:
+                    <label className={`${block('row')}-label`}>
+                        <span>Login:</span>
                         <input type="text" value={login} onChange={handleOnChangeLogin}/>
                     </label>
                 </div>
                 <div className={block('row')}>
-                    <label>
-                        Hasło:
+                    <label className={`${block('row')}-label`}>
+                        <span>Hasło:</span>
                         <input type="password" value={password} onChange={handleOnChangePassword}/>
                     </label>
                 </div>

@@ -4,7 +4,13 @@
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 100;
-  padding: 15px;
+  padding: 20px;
+  background-color: #181b21;
+  border: none;
+  width: 25%;
+  height: 25%;
+  min-width: 300px;
+  min-height: 300px;
 
   &::backdrop {
     backdrop-filter: blur(2px);

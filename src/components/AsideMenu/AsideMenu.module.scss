@@ -1,0 +1,44 @@
+.aside-menu {
+  width: 200px;
+  min-width: 200px;
+  background-color: #181b21;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    padding: 15px;
+    color: white;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .2s;
+    width: 100%;
+
+    &:hover {
+      //background-color: #61dafb;
+      transform: translateX(20px);
+    }
+    &.active {
+      border-left: 10px solid #61dafb;
+      color: #61dafb;
+      transform: translateX(0px);
+    }
+    &-admin {
+      &.active {
+        border-left: 10px solid crimson;
+        color: crimson;
+      }
+    }
+  }
+}
